@@ -143,7 +143,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     
                     <div class="form-group">
                         <label for="content">新闻内容 *</label>
-                        <div id="editor-container" style="height: 300px; border: 1px solid #ddd; border-radius: 4px;"></div>
+                        <div style="margin-bottom: 10px;">
+                            <button type="button" class="btn btn-secondary" onclick="openHtmlPasteModal()" style="font-size: 12px; padding: 6px 12px;">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 4px;">
+                                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                                    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                                </svg>
+                                粘贴HTML代码
+                            </button>
+                            <span style="color: #666; font-size: 12px; margin-left: 8px;">支持直接粘贴HTML代码自动转换</span>
+                        </div>
+                        <div id="editor-container" style="height: 400px; border: 1px solid #ddd; border-radius: 4px;"></div>
                         <textarea id="content" name="content" style="display: none;"></textarea>
                     </div>
                     
@@ -184,6 +194,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </main>
     </div>
     
+    <!-- HTML粘贴模态框 -->
+    <div id="htmlPasteModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; justify-content: center; align-items: center;">
+        <div style="background: white; border-radius: 8px; width: 90%; max-width: 800px; max-height: 80vh; display: flex; flex-direction: column; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+            <div style="padding: 20px; border-bottom: 1px solid #e0e0e0; display: flex; justify-content: space-between; align-items: center;">
+                <h3 style="margin: 0; font-size: 18px; color: #333;">粘贴HTML代码</h3>
+                <button type="button" onclick="closeHtmlPasteModal()" style="background: none; border: none; font-size: 24px; cursor: pointer; color: #666;">&times;</button>
+            </div>
+            <div style="padding: 20px; flex: 1; overflow: hidden;">
+                <textarea id="htmlPasteArea" placeholder="请在此处粘贴HTML代码..." style="width: 100%; height: 300px; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 13px; resize: vertical; line-height: 1.5;"></textarea>
+                <p style="color: #666; font-size: 12px; margin-top: 8px;">提示：支持粘贴任意长度的HTML代码，系统会自动转换为富文本格式</p>
+            </div>
+            <div style="padding: 20px; border-top: 1px solid #e0e0e0; display: flex; justify-content: flex-end; gap: 10px;">
+                <button type="button" class="btn btn-secondary" onclick="closeHtmlPasteModal()">取消</button>
+                <button type="button" class="btn btn-primary" onclick="convertHtmlToEditor()">转换并插入</button>
+            </div>
+        </div>
+    </div>
+    
     <script>
         // 初始化 Quill 富文本编辑器
         const quill = new Quill('#editor-container', {
@@ -207,6 +235,152 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // 表单提交时同步编辑器内容到textarea
         document.querySelector('form').addEventListener('submit', function() {
             document.getElementById('content').value = quill.root.innerHTML;
+        });
+        
+        // 打开HTML粘贴模态框
+        function openHtmlPasteModal() {
+            document.getElementById('htmlPasteModal').style.display = 'flex';
+            document.getElementById('htmlPasteArea').focus();
+        }
+        
+        // 关闭HTML粘贴模态框
+        function closeHtmlPasteModal() {
+            document.getElementById('htmlPasteModal').style.display = 'none';
+            document.getElementById('htmlPasteArea').value = '';
+        }
+        
+        // 转换HTML并插入到编辑器
+        function convertHtmlToEditor() {
+            const htmlContent = document.getElementById('htmlPasteArea').value.trim();
+            
+            if (!htmlContent) {
+                alert('请输入HTML代码');
+                return;
+            }
+            
+            // 检查是否包含HTML标签
+            const hasHtmlTags = /<[^>]+>/.test(htmlContent);
+            
+            if (!hasHtmlTags) {
+                // 如果没有HTML标签，直接作为纯文本插入
+                quill.root.innerHTML = '<p>' + escapeHtml(htmlContent).replace(/\n/g, '</p><p>') + '</p>';
+            } else {
+                // 清理HTML（防止XSS）
+                const cleanedHtml = cleanHtml(htmlContent);
+                
+                // 使用Quill的clipboard API来插入HTML
+                quill.clipboard.dangerouslyPasteHTML(cleanedHtml);
+            }
+            
+            closeHtmlPasteModal();
+            
+            // 显示成功提示
+            showToast('HTML代码已成功转换并插入');
+        }
+        
+        // 清理HTML（防止XSS攻击）
+        function cleanHtml(html) {
+            // 移除html, head, body标签，保留内容
+            html = html.replace(/<html[^>]*>|<\/html>/gi, '');
+            html = html.replace(/<head[^>]*>[\s\S]*?<\/head>/gi, '');
+            html = html.replace(/<body[^>]*>|<\/body>/gi, '');
+            
+            // 创建临时DOM元素来解析和清理HTML
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = html;
+            
+            // 移除危险标签和属性
+            const dangerousTags = ['script', 'iframe', 'object', 'embed', 'form', 'input', 'button', 'style', 'link', 'meta'];
+            const dangerousAttrs = ['onerror', 'onload', 'onclick', 'onmouseover', 'onmouseout', 'onfocus', 'onblur', 'onchange', 'onsubmit', 'onkeydown', 'onkeyup'];
+            
+            dangerousTags.forEach(tag => {
+                const elements = tempDiv.getElementsByTagName(tag);
+                while (elements.length > 0) {
+                    elements[0].remove();
+                }
+            });
+            
+            // 清理危险属性
+            const allElements = tempDiv.getElementsByTagName('*');
+            for (let i = allElements.length - 1; i >= 0; i--) {
+                const el = allElements[i];
+                dangerousAttrs.forEach(attr => {
+                    if (el.hasAttribute(attr)) {
+                        el.removeAttribute(attr);
+                    }
+                });
+            }
+            
+            // 如果没有内容，返回原始HTML（可能解析失败）
+            const result = tempDiv.innerHTML.trim();
+            if (!result && html.trim()) {
+                // 如果DOM解析后为空但有原始内容，返回清理后的原始HTML
+                return html.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '')
+                          .replace(/<iframe[^>]*>[\s\S]*?<\/iframe>/gi, '')
+                          .replace(/on\w+\s*=\s*["'][^"']*["']/gi, '');
+            }
+            
+            return result || html;
+        }
+        
+        // HTML转义
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        // 显示提示消息
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #4a6fa5;
+                color: white;
+                padding: 12px 20px;
+                border-radius: 4px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+                z-index: 10000;
+                font-size: 14px;
+                animation: slideIn 0.3s ease;
+            `;
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+        
+        // 添加动画样式
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // 点击模态框背景关闭
+        document.getElementById('htmlPasteModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeHtmlPasteModal();
+            }
+        });
+        
+        // ESC键关闭模态框
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeHtmlPasteModal();
+            }
         });
     </script>
 </body>
