@@ -1,0 +1,8 @@
+{
+  "name": "huasai-website",
+  "version": "1.0.0",
+  "description": "深圳华赛信息咨询有限公司官网",
+  "scripts": {
+    "vercel-build": "echo 'Build completed'"
+  }
+}

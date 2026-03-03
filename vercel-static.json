@@ -1,0 +1,56 @@
+{
+  "version": 2,
+  "name": "huasai-website-static",
+  "builds": [
+    {
+      "src": "**/*.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/about",
+      "dest": "/about.html"
+    },
+    {
+      "src": "/team",
+      "dest": "/team.html"
+    },
+    {
+      "src": "/customer",
+      "dest": "/customer.html"
+    },
+    {
+      "src": "/honor",
+      "dest": "/honor.html"
+    },
+    {
+      "src": "/cmmi",
+      "dest": "/cmmi.html"
+    },
+    {
+      "src": "/aspice",
+      "dest": "/aspice.html"
+    },
+    {
+      "src": "/contact",
+      "dest": "/contact.html"
+    },
+    {
+      "src": "/faq",
+      "dest": "/faq.html"
+    },
+    {
+      "src": "/sitemap",
+      "dest": "/sitemap.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1.html"
+    }
+  ]
+}

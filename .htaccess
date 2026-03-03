@@ -1,0 +1,12 @@
+# 开启伪静态功能
+RewriteEngine On
+
+# 绑定二级域名 asp.huasaiinfo.com 到 aspice.php
+RewriteCond %{HTTP_HOST} ^(www\.)?asp\.huasaiinfo\.com$
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /aspice.php [L]
+
+# 首页也指向 aspice.php
+RewriteCond %{HTTP_HOST} ^(www\.)?asp\.huasaiinfo\.com$
+RewriteRule ^(/)?$ /aspice.php [L]

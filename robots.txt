@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: http://www.huasaiinfo.com/sitemap.xml
+
+# Disallow admin area
+Disallow: /synspace.com/en/admin/
+Disallow: /admin/
+
+# Disallow system files
+Disallow: /db_config.php
+Disallow: /*.sql$
+
+# Crawl-delay for bots
+Crawl-delay: 10

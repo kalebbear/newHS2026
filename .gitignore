@@ -1,0 +1,13 @@
+# 忽略文件
+*.php
+*.sql
+*.log
+
+# 忽略目录
+synspace.com/en/admin/
+
+# 但保留静态生成的HTML文件
+# 保留资源文件
+!*.html
+!synspace.com/
+!synspace.com/**
