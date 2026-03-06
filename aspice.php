@@ -129,69 +129,185 @@ include 'pageheader.php';
             <div class="container">
               <div class="row">
                 <div class="col-12">
-                  <h2 class="m-teaserboxwide__title" style="text-align: center; margin-bottom: 40px;">
+                  <h2 class="m-teaserboxwide__title" style="text-align: center; margin-bottom: 50px;">
                     <span class="red">ASPICE实施步骤</span>
                   </h2>
                   
-                  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px; margin-bottom: 30px;">
-                    <div style="display: flex; align-items: center; flex: 1; min-width: 200px;">
-                      <div style="width: 80px; height: 80px; background-color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #333; font-size: 24px; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        1
-                      </div>
-                      <div style="margin-left: 20px; flex-grow: 1;">
-                        <h4 style="margin: 0 0 5px 0; font-size: 16px; font-weight: 600;">差距分析</h4>
-                        <p style="margin: 0; font-size: 14px; color: #666;">识别当前差距<br />制定改进计划</p>
+                  <style>
+                    .steps-container {
+                      max-width: 900px;
+                      margin: 0 auto;
+                      position: relative;
+                    }
+                    .steps-container::before {
+                      content: '';
+                      position: absolute;
+                      left: 40px;
+                      top: 0;
+                      bottom: 0;
+                      width: 4px;
+                      background: linear-gradient(to bottom, #4a6fa5, #6b8cbc);
+                      border-radius: 2px;
+                    }
+                    .step-item {
+                      display: flex;
+                      align-items: flex-start;
+                      margin-bottom: 40px;
+                      position: relative;
+                    }
+                    .step-item:last-child {
+                      margin-bottom: 0;
+                    }
+                    .step-number {
+                      width: 80px;
+                      height: 80px;
+                      background: linear-gradient(135deg, #4a6fa5, #6b8cbc);
+                      border-radius: 50%;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: #fff;
+                      font-size: 28px;
+                      font-weight: bold;
+                      flex-shrink: 0;
+                      box-shadow: 0 4px 15px rgba(74, 111, 165, 0.3);
+                      position: relative;
+                      z-index: 1;
+                      border: 4px solid #fff;
+                    }
+                    .step-content {
+                      margin-left: 30px;
+                      flex: 1;
+                      background: #fff;
+                      padding: 25px 30px;
+                      border-radius: 12px;
+                      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+                      border: 1px solid #e8e8e8;
+                      transition: all 0.3s ease;
+                    }
+                    .step-content:hover {
+                      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+                      transform: translateX(5px);
+                    }
+                    .step-content h4 {
+                      margin: 0 0 12px 0;
+                      font-size: 18px;
+                      font-weight: 600;
+                      color: #333;
+                    }
+                    .step-content p {
+                      margin: 0;
+                      font-size: 14px;
+                      line-height: 1.8;
+                      color: #666;
+                    }
+                    .step-tags {
+                      display: flex;
+                      flex-wrap: wrap;
+                      gap: 8px;
+                      margin-top: 15px;
+                    }
+                    .step-tag {
+                      background: #f0f4f8;
+                      color: #4a6fa5;
+                      padding: 4px 12px;
+                      border-radius: 20px;
+                      font-size: 12px;
+                      font-weight: 500;
+                    }
+                    @media (max-width: 768px) {
+                      .steps-container::before {
+                        left: 25px;
+                      }
+                      .step-number {
+                        width: 50px;
+                        height: 50px;
+                        font-size: 20px;
+                        border-width: 3px;
+                      }
+                      .step-content {
+                        margin-left: 20px;
+                        padding: 20px;
+                      }
+                    }
+                  </style>
+                  
+                  <div class="steps-container">
+                    <div class="step-item">
+                      <div class="step-number">1</div>
+                      <div class="step-content">
+                        <h4>差距分析</h4>
+                        <p>全面评估企业当前研发流程与ASPICE标准的差距，识别改进机会，制定详细的改进路线图。</p>
+                        <div class="step-tags">
+                          <span class="step-tag">现状评估</span>
+                          <span class="step-tag">差距识别</span>
+                          <span class="step-tag">改进计划</span>
+                        </div>
                       </div>
                     </div>
-                    <div style="color: #333; font-size: 24px;">→</div>
-                    <div style="display: flex; align-items: center; flex: 1; min-width: 200px;">
-                      <div style="width: 80px; height: 80px; background-color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #333; font-size: 24px; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        2
-                      </div>
-                      <div style="margin-left: 20px; flex-grow: 1;">
-                        <h4 style="margin: 0 0 5px 0; font-size: 16px; font-weight: 600;">流程定义</h4>
-                        <p style="margin: 0; font-size: 14px; color: #666;">定义开发流程<br />建立质量标准</p>
-                      </div>
-                    </div>
-                    <div style="color: #333; font-size: 24px;">→</div>
-                    <div style="display: flex; align-items: center; flex: 1; min-width: 200px;">
-                      <div style="width: 80px; height: 80px; background-color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #333; font-size: 24px; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        3
-                      </div>
-                      <div style="margin-left: 20px; flex-grow: 1;">
-                        <h4 style="margin: 0 0 5px 0; font-size: 16px; font-weight: 600;">培训宣导</h4>
-                        <p style="margin: 0; font-size: 14px; color: #666;">ASPICE培训<br />流程宣导</p>
+                    
+                    <div class="step-item">
+                      <div class="step-number">2</div>
+                      <div class="step-content">
+                        <h4>流程定义</h4>
+                        <p>基于ASPICE标准定义符合企业实际的软件开发流程，建立质量管理体系和文档模板。</p>
+                        <div class="step-tags">
+                          <span class="step-tag">流程设计</span>
+                          <span class="step-tag">质量标准</span>
+                          <span class="step-tag">文档模板</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px;">
-                    <div style="display: flex; align-items: center; flex: 1; min-width: 200px;">
-                      <div style="width: 80px; height: 80px; background-color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #333; font-size: 24px; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        4
-                      </div>
-                      <div style="margin-left: 20px; flex-grow: 1;">
-                        <h4 style="margin: 0 0 5px 0; font-size: 16px; font-weight: 600;">试点实施</h4>
-                        <p style="margin: 0; font-size: 14px; color: #666;">选择试点项目<br />流程试运行</p>
-                      </div>
-                    </div>
-                    <div style="color: #333; font-size: 24px;">→</div>
-                    <div style="display: flex; align-items: center; flex: 1; min-width: 200px;">
-                      <div style="width: 80px; height: 80px; background-color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #333; font-size: 24px; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        5
-                      </div>
-                      <div style="margin-left: 20px; flex-grow: 1;">
-                        <h4 style="margin: 0 0 5px 0; font-size: 16px; font-weight: 600;">全面推广</h4>
-                        <p style="margin: 0; font-size: 14px; color: #666;">流程优化<br />全面推广应用</p>
+                    
+                    <div class="step-item">
+                      <div class="step-number">3</div>
+                      <div class="step-content">
+                        <h4>培训宣导</h4>
+                        <p>开展全员ASPICE知识培训，确保团队成员理解流程要求，掌握执行方法和工具使用。</p>
+                        <div class="step-tags">
+                          <span class="step-tag">知识培训</span>
+                          <span class="step-tag">流程宣导</span>
+                          <span class="step-tag">工具培训</span>
+                        </div>
                       </div>
                     </div>
-                    <div style="color: #333; font-size: 24px;">→</div>
-                    <div style="display: flex; align-items: center; flex: 1; min-width: 200px;">
-                      <div style="width: 80px; height: 80px; background-color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #333; font-size: 24px; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        6
+                    
+                    <div class="step-item">
+                      <div class="step-number">4</div>
+                      <div class="step-content">
+                        <h4>试点实施</h4>
+                        <p>选择典型项目进行流程试运行，验证流程有效性，收集反馈并进行优化调整。</p>
+                        <div class="step-tags">
+                          <span class="step-tag">试点项目</span>
+                          <span class="step-tag">流程验证</span>
+                          <span class="step-tag">持续改进</span>
+                        </div>
                       </div>
-                      <div style="margin-left: 20px; flex-grow: 1;">
-                        <h4 style="margin: 0 0 5px 0; font-size: 16px; font-weight: 600;">评估认证</h4>
-                        <p style="margin: 0; font-size: 14px; color: #666;">内部评估<br />正式认证</p>
+                    </div>
+                    
+                    <div class="step-item">
+                      <div class="step-number">5</div>
+                      <div class="step-content">
+                        <h4>全面推广</h4>
+                        <p>在试点成功基础上，将优化后的流程推广到所有研发项目，建立持续改进机制。</p>
+                        <div class="step-tags">
+                          <span class="step-tag">全面推广</span>
+                          <span class="step-tag">流程固化</span>
+                          <span class="step-tag">持续改进</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="step-item">
+                      <div class="step-number">6</div>
+                      <div class="step-content">
+                        <h4>评估认证</h4>
+                        <p>进行内部预评估，查漏补缺，最终通过第三方正式评估，获得ASPICE等级证书。</p>
+                        <div class="step-tags">
+                          <span class="step-tag">内部评估</span>
+                          <span class="step-tag">正式认证</span>
+                          <span class="step-tag">证书获取</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -200,36 +316,154 @@ include 'pageheader.php';
             </div>
           </section>
           
-          <section class="m-textimage" data-imgpos="left">
+          <section class="m-section" style="background-color: #f8f9fa; padding: 60px 0;">
             <div class="container">
               <div class="row">
-                <div class="m-textimage__image">
-                  <picture class="no-lazyload">
-                    <img
-                      src="synspace.com/app/uploads/2025/06/illustration_contact_aspice.jpg"
-                      alt=""
-                      title="ASPICE认证" />
-                  </picture>
-                </div>
-                <div class="m-textimage__content" style="display: flex;
-    justify-content: center;">
-                  <div style="display: flex; flex-direction: column; height: 100%; justify-content: center;">
-                    <a href="whataspicerz.php" style="color: #4a6fa5; text-decoration: none; font-size: 18px; margin-bottom: 40px; display: inline-flex; align-items: center; transition: all 0.3s ease;">
-                      <svg style="width: 20px; height: 20px; margin-right: 10px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <path d="M12 16v-4M12 8h.01"></path>
-                      </svg>
-                      了解ASPICE认证
+                <div class="col-12">
+                  <style>
+                    .action-buttons-container {
+                      display: flex;
+                      justify-content: center;
+                      gap: 30px;
+                      flex-wrap: wrap;
+                    }
+                    .action-btn {
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                      padding: 35px 40px;
+                      background: linear-gradient(135deg, #4a6fa5 0%, #5a7fb5 100%);
+                      color: #fff;
+                      text-decoration: none;
+                      border-radius: 16px;
+                      box-shadow: 0 6px 20px rgba(74, 111, 165, 0.3);
+                      transition: all 0.3s ease;
+                      position: relative;
+                      overflow: hidden;
+                      min-width: 280px;
+                      text-align: center;
+                    }
+                    .action-btn::before {
+                      content: '';
+                      position: absolute;
+                      top: 0;
+                      left: -100%;
+                      width: 100%;
+                      height: 100%;
+                      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+                      transition: left 0.5s ease;
+                    }
+                    .action-btn:hover::before {
+                      left: 100%;
+                    }
+                    .action-btn:hover {
+                      transform: translateY(-5px);
+                      box-shadow: 0 12px 30px rgba(74, 111, 165, 0.4);
+                    }
+                    .action-btn-icon {
+                      width: 64px;
+                      height: 64px;
+                      background: rgba(255,255,255,0.2);
+                      border-radius: 50%;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      margin-bottom: 20px;
+                      transition: all 0.3s ease;
+                    }
+                    .action-btn:hover .action-btn-icon {
+                      background: rgba(255,255,255,0.3);
+                      transform: scale(1.1);
+                    }
+                    .action-btn-icon svg {
+                      width: 28px;
+                      height: 28px;
+                      stroke: #fff;
+                      stroke-width: 2;
+                    }
+                    .action-btn-title {
+                      font-size: 20px;
+                      font-weight: 600;
+                      margin: 0 0 10px 0;
+                      color: #fff;
+                    }
+                    .action-btn-desc {
+                      font-size: 14px;
+                      margin: 0 0 20px 0;
+                      color: rgba(255,255,255,0.9);
+                      line-height: 1.5;
+                    }
+                    .action-btn-arrow {
+                      display: inline-flex;
+                      align-items: center;
+                      gap: 8px;
+                      padding: 10px 24px;
+                      background: rgba(255,255,255,0.2);
+                      border-radius: 25px;
+                      font-size: 14px;
+                      font-weight: 500;
+                      transition: all 0.3s ease;
+                    }
+                    .action-btn:hover .action-btn-arrow {
+                      background: rgba(255,255,255,0.3);
+                      gap: 12px;
+                    }
+                    .action-btn-arrow svg {
+                      width: 16px;
+                      height: 16px;
+                      stroke: #fff;
+                      stroke-width: 2;
+                    }
+                    @media (max-width: 768px) {
+                      .action-buttons-container {
+                        flex-direction: column;
+                        align-items: center;
+                      }
+                      .action-btn {
+                        width: 100%;
+                        max-width: 350px;
+                        min-width: auto;
+                        padding: 30px;
+                      }
+                    }
+                  </style>
+                  
+                  <div class="action-buttons-container">
+                    <a href="whataspicerz.php" class="action-btn">
+                      <div class="action-btn-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <path d="M12 16v-4M12 8h.01"></path>
+                        </svg>
+                      </div>
+                      <h4 class="action-btn-title">了解ASPICE认证</h4>
+                      <p class="action-btn-desc">深入了解ASPICE认证的<br>价值与意义</p>
+                      <span class="action-btn-arrow">
+                        了解更多
+                        <svg viewBox="0 0 24 24" fill="none">
+                          <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                      </span>
                     </a>
-                    <a href="carryaspicerz.php" style="color: #4a6fa5; text-decoration: none; font-size: 18px; display: inline-flex; align-items: center; transition: all 0.3s ease;">
-                      <svg style="width: 20px; height: 20px; margin-right: 10px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                        <polyline points="14 2 14 8 20 8"></polyline>
-                        <line x1="16" y1="13" x2="8" y2="13"></line>
-                        <line x1="16" y1="17" x2="8" y2="17"></line>
-                        <polyline points="10 9 9 9 8 9"></polyline>
-                      </svg>
-                      ASPICE认证流程
+                    
+                    <a href="carryaspicerz.php" class="action-btn">
+                      <div class="action-btn-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                          <polyline points="14 2 14 8 20 8"></polyline>
+                          <line x1="16" y1="13" x2="8" y2="13"></line>
+                          <line x1="16" y1="17" x2="8" y2="17"></line>
+                          <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                      </div>
+                      <h4 class="action-btn-title">ASPICE认证流程</h4>
+                      <p class="action-btn-desc">查看详细的认证流程<br>与步骤指南</p>
+                      <span class="action-btn-arrow">
+                        查看流程
+                        <svg viewBox="0 0 24 24" fill="none">
+                          <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                      </span>
                     </a>
                   </div>
                 </div>
@@ -247,7 +481,7 @@ include 'pageheader.php';
                   <ul class="m-teaserboxwide__items">
                     <li class="m-teaserboxwide__item">
                       <a
-                        href="#"
+                        href="javascript:void(0);"
                         class="m-teaserboxwide__link"
                         target="">
                         <div class="m-teaserboxwide__content">
@@ -268,7 +502,7 @@ include 'pageheader.php';
                     </li>
                     <li class="m-teaserboxwide__item">
                       <a
-                        href="#"
+                        href="javascript:void(0);"
                         class="m-teaserboxwide__link"
                         target="">
                         <div class="m-teaserboxwide__content">
@@ -289,7 +523,7 @@ include 'pageheader.php';
                     </li>
                     <li class="m-teaserboxwide__item">
                       <a
-                        href="#"
+                        href="javascript:void(0);"
                         class="m-teaserboxwide__link"
                         target="">
                         <div class="m-teaserboxwide__content">
@@ -310,7 +544,7 @@ include 'pageheader.php';
                     </li>
                     <li class="m-teaserboxwide__item">
                       <a
-                        href="#"
+                        href="javascript:void(0);"
                         class="m-teaserboxwide__link"
                         target="">
                         <div class="m-teaserboxwide__content">

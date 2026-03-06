@@ -153,79 +153,198 @@ include 'pageheader.php';
             <div class="container">
               <div class="row">
                 <div class="col-12">
-                  <h2 class="m-teaserboxwide__title" style="text-align: center; margin-bottom: 40px;">
+                  <h2 class="m-teaserboxwide__title" style="text-align: center; margin-bottom: 50px;">
                     <span class="red">CMMI实施步骤</span>
                   </h2>
                   
-                  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px; margin-bottom: 30px;">
-                    <div style="display: flex; align-items: center; flex: 1; min-width: 200px;">
-                      <div style="width: 80px; height: 80px; background-color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #333; font-size: 24px; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        1
-                      </div>
-                      <div style="margin-left: 20px; flex-grow: 1;">
-                        <h4 style="margin: 0 0 5px 0; font-size: 16px; font-weight: 600;">差距分析</h4>
-                        <p style="margin: 0; font-size: 14px; color: #666;">识别改进重点<br />设计总体方案</p>
+                  <style>
+                    .steps-container {
+                      max-width: 900px;
+                      margin: 0 auto;
+                      position: relative;
+                    }
+                    .steps-container::before {
+                      content: '';
+                      position: absolute;
+                      left: 40px;
+                      top: 0;
+                      bottom: 0;
+                      width: 4px;
+                      background: linear-gradient(to bottom, #4a6fa5, #6b8cbc);
+                      border-radius: 2px;
+                    }
+                    .step-item {
+                      display: flex;
+                      align-items: flex-start;
+                      margin-bottom: 40px;
+                      position: relative;
+                    }
+                    .step-item:last-child {
+                      margin-bottom: 0;
+                    }
+                    .step-number {
+                      width: 80px;
+                      height: 80px;
+                      background: linear-gradient(135deg, #4a6fa5, #6b8cbc);
+                      border-radius: 50%;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: #fff;
+                      font-size: 28px;
+                      font-weight: bold;
+                      flex-shrink: 0;
+                      box-shadow: 0 4px 15px rgba(74, 111, 165, 0.3);
+                      position: relative;
+                      z-index: 1;
+                      border: 4px solid #fff;
+                    }
+                    .step-content {
+                      margin-left: 30px;
+                      flex: 1;
+                      background: #fff;
+                      padding: 25px 30px;
+                      border-radius: 12px;
+                      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+                      border: 1px solid #e8e8e8;
+                      transition: all 0.3s ease;
+                    }
+                    .step-content:hover {
+                      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+                      transform: translateX(5px);
+                    }
+                    .step-content h4 {
+                      margin: 0 0 12px 0;
+                      font-size: 18px;
+                      font-weight: 600;
+                      color: #333;
+                    }
+                    .step-content p {
+                      margin: 0;
+                      font-size: 14px;
+                      line-height: 1.8;
+                      color: #666;
+                    }
+                    .step-tags {
+                      display: flex;
+                      flex-wrap: wrap;
+                      gap: 8px;
+                      margin-top: 15px;
+                    }
+                    .step-tag {
+                      background: #f0f4f8;
+                      color: #4a6fa5;
+                      padding: 4px 12px;
+                      border-radius: 20px;
+                      font-size: 12px;
+                      font-weight: 500;
+                    }
+                    @media (max-width: 768px) {
+                      .steps-container::before {
+                        left: 25px;
+                      }
+                      .step-number {
+                        width: 50px;
+                        height: 50px;
+                        font-size: 20px;
+                        border-width: 3px;
+                      }
+                      .step-content {
+                        margin-left: 20px;
+                        padding: 20px;
+                      }
+                    }
+                  </style>
+                  
+                  <div class="steps-container">
+                    <div class="step-item">
+                      <div class="step-number">1</div>
+                      <div class="step-content">
+                        <h4>差距分析</h4>
+                        <p>全面评估企业当前研发管理水平与CMMI标准的差距，识别关键改进点，设计总体改进方案。</p>
+                        <div class="step-tags">
+                          <span class="step-tag">现状诊断</span>
+                          <span class="step-tag">差距识别</span>
+                          <span class="step-tag">方案设计</span>
+                        </div>
                       </div>
                     </div>
-                    <div style="color: #333; font-size: 24px;">→</div>
-                    <div style="display: flex; align-items: center; flex: 1; min-width: 200px;">
-                      <div style="width: 80px; height: 80px; background-color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #333; font-size: 24px; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        2
-                      </div>
-                      <div style="margin-left: 20px; flex-grow: 1;">
-                        <h4 style="margin: 0 0 5px 0; font-size: 16px; font-weight: 600;">改进计划</h4>
-                        <p style="margin: 0; font-size: 14px; color: #666;">拟定改进计划<br />组建改进团队</p>
-                      </div>
-                    </div>
-                    <div style="color: #333; font-size: 24px;">→</div>
-                    <div style="display: flex; align-items: center; flex: 1; min-width: 200px;">
-                      <div style="width: 80px; height: 80px; background-color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #333; font-size: 24px; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        3
-                      </div>
-                      <div style="margin-left: 20px; flex-grow: 1;">
-                        <h4 style="margin: 0 0 5px 0; font-size: 16px; font-weight: 600;">基础培训</h4>
-                        <p style="margin: 0; font-size: 14px; color: #666;">CMMI模型培训<br />改进要点培训</p>
+                    
+                    <div class="step-item">
+                      <div class="step-number">2</div>
+                      <div class="step-content">
+                        <h4>改进计划</h4>
+                        <p>制定详细的改进实施计划，明确各阶段目标和时间节点，组建跨部门的流程改进团队。</p>
+                        <div class="step-tags">
+                          <span class="step-tag">计划制定</span>
+                          <span class="step-tag">团队组建</span>
+                          <span class="step-tag">资源分配</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px;">
-                    <div style="display: flex; align-items: center; flex: 1; min-width: 200px;">
-                      <div style="width: 80px; height: 80px; background-color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #333; font-size: 24px; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        4
-                      </div>
-                      <div style="margin-left: 20px; flex-grow: 1;">
-                        <h4 style="margin: 0 0 5px 0; font-size: 16px; font-weight: 600;">过程定义</h4>
-                        <p style="margin: 0; font-size: 14px; color: #666;">过程标准研讨<br />过程标准修订</p>
-                      </div>
-                    </div>
-                    <div style="color: #333; font-size: 24px;">→</div>
-                    <div style="display: flex; align-items: center; flex: 1; min-width: 200px;">
-                      <div style="width: 80px; height: 80px; background-color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #333; font-size: 24px; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        5
-                      </div>
-                      <div style="margin-left: 20px; flex-grow: 1;">
-                        <h4 style="margin: 0 0 5px 0; font-size: 16px; font-weight: 600;">过程实施</h4>
-                        <p style="margin: 0; font-size: 14px; color: #666;">过程标准试点<br />过程标准实施</p>
+                    
+                    <div class="step-item">
+                      <div class="step-number">3</div>
+                      <div class="step-content">
+                        <h4>基础培训</h4>
+                        <p>开展CMMI模型知识培训，让团队成员理解模型要求，掌握过程改进的方法和工具。</p>
+                        <div class="step-tags">
+                          <span class="step-tag">模型培训</span>
+                          <span class="step-tag">方法培训</span>
+                          <span class="step-tag">工具培训</span>
+                        </div>
                       </div>
                     </div>
-                    <div style="color: #333; font-size: 24px;">→</div>
-                    <div style="display: flex; align-items: center; flex: 1; min-width: 200px;">
-                      <div style="width: 80px; height: 80px; background-color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #333; font-size: 24px; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        6
-                      </div>
-                      <div style="margin-left: 20px; flex-grow: 1;">
-                        <h4 style="margin: 0 0 5px 0; font-size: 16px; font-weight: 600;">效果验收</h4>
-                        <p style="margin: 0; font-size: 14px; color: #666;">实施效果总结<br />正式评估认证</p>
+                    
+                    <div class="step-item">
+                      <div class="step-number">4</div>
+                      <div class="step-content">
+                        <h4>过程定义</h4>
+                        <p>基于CMMI标准和企业实际，研讨并定义符合组织特点的研发过程标准和规范。</p>
+                        <div class="step-tags">
+                          <span class="step-tag">过程研讨</span>
+                          <span class="step-tag">标准制定</span>
+                          <span class="step-tag">文档编制</span>
+                        </div>
                       </div>
                     </div>
-                    <div style="color: #333; font-size: 24px;">→</div>
-                    <div style="display: flex; align-items: center; flex: 1; min-width: 200px;">
-                      <div style="width: 80px; height: 80px; background-color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #333; font-size: 24px; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        7
+                    
+                    <div class="step-item">
+                      <div class="step-number">5</div>
+                      <div class="step-content">
+                        <h4>过程实施</h4>
+                        <p>选择试点项目进行过程试运行，验证过程有效性，收集反馈并优化完善后全面推广。</p>
+                        <div class="step-tags">
+                          <span class="step-tag">试点运行</span>
+                          <span class="step-tag">过程优化</span>
+                          <span class="step-tag">全面推广</span>
+                        </div>
                       </div>
-                      <div style="margin-left: 20px; flex-grow: 1;">
-                        <h4 style="margin: 0 0 5px 0; font-size: 16px; font-weight: 600;">持续改进</h4>
-                        <p style="margin: 0; font-size: 14px; color: #666;">解决遗留问题<br />改进效果跟踪</p>
+                    </div>
+                    
+                    <div class="step-item">
+                      <div class="step-number">6</div>
+                      <div class="step-content">
+                        <h4>效果验收</h4>
+                        <p>总结实施效果，进行内部预评估，查漏补缺，准备正式评估认证所需的证据和材料。</p>
+                        <div class="step-tags">
+                          <span class="step-tag">效果总结</span>
+                          <span class="step-tag">内部评估</span>
+                          <span class="step-tag">正式认证</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="step-item">
+                      <div class="step-number">7</div>
+                      <div class="step-content">
+                        <h4>持续改进</h4>
+                        <p>解决实施过程中遗留的问题，建立持续改进机制，定期跟踪改进效果，确保过程持续优化。</p>
+                        <div class="step-tags">
+                          <span class="step-tag">问题解决</span>
+                          <span class="step-tag">效果跟踪</span>
+                          <span class="step-tag">持续优化</span>
+                        </div>
                       </div>
                     </div>
                   </div>
