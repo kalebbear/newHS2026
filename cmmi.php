@@ -165,124 +165,221 @@ $pageKeywords = 'CMMI评估,CMMI认证,CMMI咨询,CMMI 3级,CMMI 5级';
                                 <!-- 常见问题 -->
                                 <div style="max-width: 1000px; margin: 0 auto 60px auto;">
                                     <h3 style="margin-bottom: 30px; color: #333; text-align: center;">常见问题</h3>
-                                    <div style="display: flex; flex-wrap: wrap; gap: 30px;">
-                                        <div style="flex: 1; min-width: 450px;">
-                                            <div style="margin-bottom: 20px; padding: 20px; background-color: #f9f9f9; border-radius: 8px; transition: all 0.3s ease; position: relative; overflow: hidden;">
-                                                <h4 style="margin: 0 0 10px 0; font-size: 16px; font-weight: 600;">申请条件</h4>
-                                                <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #666;">
-                                                    什么样的公司可以申请？
-                                                </p>
-                                                <div style="position: absolute; top: 100%; left: 0; width: 100%; padding: 20px; background-color: #f0f0f0; transition: top 0.3s ease; box-sizing: border-box;">
-                                                    <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #333;">
-                                                        任何有研发活动的企业都可以申请CMMI评估认证，包括软件开发、系统集成、硬件开发等类型的企业。
-                                                    </p>
+                                    <style>
+                                        .faq-container {
+                                            display: flex;
+                                            flex-wrap: wrap;
+                                            gap: 20px;
+                                        }
+                                        .faq-column {
+                                            flex: 1;
+                                            min-width: 450px;
+                                        }
+                                        .faq-item {
+                                            margin-bottom: 15px;
+                                            border: 1px solid #e0e0e0;
+                                            border-radius: 8px;
+                                            overflow: hidden;
+                                            background: #fff;
+                                            transition: box-shadow 0.3s ease;
+                                        }
+                                        .faq-item:hover {
+                                            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                                        }
+                                        .faq-question {
+                                            padding: 18px 20px;
+                                            cursor: pointer;
+                                            display: flex;
+                                            justify-content: space-between;
+                                            align-items: center;
+                                            background: #fafafa;
+                                            transition: background 0.3s ease;
+                                        }
+                                        .faq-question:hover {
+                                            background: #f0f0f0;
+                                        }
+                                        .faq-question-text {
+                                            flex: 1;
+                                        }
+                                        .faq-question-text h4 {
+                                            margin: 0 0 5px 0;
+                                            font-size: 15px;
+                                            font-weight: 600;
+                                            color: #333;
+                                        }
+                                        .faq-question-text p {
+                                            margin: 0;
+                                            font-size: 13px;
+                                            color: #666;
+                                        }
+                                        .faq-icon {
+                                            width: 24px;
+                                            height: 24px;
+                                            margin-left: 15px;
+                                            flex-shrink: 0;
+                                            transition: transform 0.3s ease;
+                                        }
+                                        .faq-item.active .faq-icon {
+                                            transform: rotate(180deg);
+                                        }
+                                        .faq-answer {
+                                            max-height: 0;
+                                            overflow: hidden;
+                                            transition: max-height 0.3s ease, padding 0.3s ease;
+                                            background: #fff;
+                                        }
+                                        .faq-item.active .faq-answer {
+                                            max-height: 500px;
+                                            padding: 0 20px 20px 20px;
+                                        }
+                                        .faq-answer p {
+                                            margin: 0;
+                                            font-size: 14px;
+                                            line-height: 1.8;
+                                            color: #555;
+                                            padding-top: 15px;
+                                            border-top: 1px dashed #e0e0e0;
+                                        }
+                                        @media (max-width: 768px) {
+                                            .faq-column {
+                                                min-width: 100%;
+                                            }
+                                        }
+                                    </style>
+                                    <div class="faq-container">
+                                        <div class="faq-column">
+                                            <div class="faq-item">
+                                                <div class="faq-question" onclick="toggleFaq(this)">
+                                                    <div class="faq-question-text">
+                                                        <h4>申请条件</h4>
+                                                        <p>什么样的公司可以申请？</p>
+                                                    </div>
+                                                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2">
+                                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                                    </svg>
                                                 </div>
-                                                <style>
-                                                    .faq-item:hover .faq-answer {
-                                                        top: 0;
-                                                    }
-                                                    .faq-item:hover {
-                                                        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-                                                    }
-                                                </style>
-                                            </div>
-                                            <div style="margin-bottom: 20px; padding: 20px; background-color: #f9f9f9; border-radius: 8px; transition: all 0.3s ease; position: relative; overflow: hidden;">
-                                                <h4 style="margin: 0 0 10px 0; font-size: 16px; font-weight: 600;">认证周期</h4>
-                                                <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #666;">
-                                                    审核需要多长时间？
-                                                </p>
-                                                <div style="position: absolute; top: 100%; left: 0; width: 100%; padding: 20px; background-color: #f0f0f0; transition: top 0.3s ease; box-sizing: border-box;">
-                                                    <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #333;">
-                                                        完整的CMMI评估认证周期通常为3-6个月，具体时间取决于企业的规模、研发流程复杂度以及准备情况。
-                                                    </p>
+                                                <div class="faq-answer">
+                                                    <p>任何有研发活动的企业都可以申请CMMI评估认证，包括软件开发、系统集成、硬件开发等类型的企业。</p>
                                                 </div>
                                             </div>
-                                            <div style="margin-bottom: 20px; padding: 20px; background-color: #f9f9f9; border-radius: 8px; transition: all 0.3s ease; position: relative; overflow: hidden;">
-                                                <h4 style="margin: 0 0 10px 0; font-size: 16px; font-weight: 600;">资源投入</h4>
-                                                <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #666;">
-                                                    需要投入多少人力和工作量？
-                                                </p>
-                                                <div style="position: absolute; top: 100%; left: 0; width: 100%; padding: 20px; background-color: #f0f0f0; transition: top 0.3s ease; box-sizing: border-box;">
-                                                    <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #333;">
-                                                        通常需要投入1-2名全职人员参与整个评估过程，同时需要各部门相关人员在评估期间配合访谈和文档提供，总工作量约为200-400人天。
-                                                    </p>
+                                            <div class="faq-item">
+                                                <div class="faq-question" onclick="toggleFaq(this)">
+                                                    <div class="faq-question-text">
+                                                        <h4>认证周期</h4>
+                                                        <p>审核需要多长时间？</p>
+                                                    </div>
+                                                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2">
+                                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                                    </svg>
+                                                </div>
+                                                <div class="faq-answer">
+                                                    <p>完整的CMMI评估认证周期通常为3-6个月，具体时间取决于企业的规模、研发流程复杂度以及准备情况。</p>
                                                 </div>
                                             </div>
-                                            <div style="margin-bottom: 20px; padding: 20px; background-color: #f9f9f9; border-radius: 8px; transition: all 0.3s ease; position: relative; overflow: hidden;">
-                                                <h4 style="margin: 0 0 10px 0; font-size: 16px; font-weight: 600;">资质维护</h4>
-                                                <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #666;">
-                                                    证书有效期是多久？
-                                                </p>
-                                                <div style="position: absolute; top: 100%; left: 0; width: 100%; padding: 20px; background-color: #f0f0f0; transition: top 0.3s ease; box-sizing: border-box;">
-                                                    <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #333;">
-                                                        CMMI证书的有效期为3年，3年后需要进行复评以维持证书有效性。在有效期内，企业需要保持流程的持续改进。
-                                                    </p>
+                                            <div class="faq-item">
+                                                <div class="faq-question" onclick="toggleFaq(this)">
+                                                    <div class="faq-question-text">
+                                                        <h4>资源投入</h4>
+                                                        <p>需要投入多少人力和工作量？</p>
+                                                    </div>
+                                                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2">
+                                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                                    </svg>
+                                                </div>
+                                                <div class="faq-answer">
+                                                    <p>通常需要投入1-2名全职人员参与整个评估过程，同时需要各部门相关人员在评估期间配合访谈和文档提供，总工作量约为200-400人天。</p>
+                                                </div>
+                                            </div>
+                                            <div class="faq-item">
+                                                <div class="faq-question" onclick="toggleFaq(this)">
+                                                    <div class="faq-question-text">
+                                                        <h4>资质维护</h4>
+                                                        <p>证书有效期是多久？</p>
+                                                    </div>
+                                                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2">
+                                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                                    </svg>
+                                                </div>
+                                                <div class="faq-answer">
+                                                    <p>CMMI证书的有效期为3年，3年后需要进行复评以维持证书有效性。在有效期内，企业需要保持流程的持续改进。</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div style="flex: 1; min-width: 450px;">
-                                            <div style="margin-bottom: 20px; padding: 20px; background-color: #f9f9f9; border-radius: 8px; transition: all 0.3s ease; position: relative; overflow: hidden;">
-                                                <h4 style="margin: 0 0 10px 0; font-size: 16px; font-weight: 600;">申请级别</h4>
-                                                <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #666;">
-                                                    我应该申请哪个级别？
-                                                </p>
-                                                <div style="position: absolute; top: 100%; left: 0; width: 100%; padding: 20px; background-color: #f0f0f0; transition: top 0.3s ease; box-sizing: border-box;">
-                                                    <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #333;">
-                                                        企业应根据自身的研发管理水平和业务需求选择合适的级别。一般建议从CMMI ML2或ML3开始，逐步提升至更高成熟度级别。
-                                                    </p>
+                                        <div class="faq-column">
+                                            <div class="faq-item">
+                                                <div class="faq-question" onclick="toggleFaq(this)">
+                                                    <div class="faq-question-text">
+                                                        <h4>申请级别</h4>
+                                                        <p>我应该申请哪个级别？</p>
+                                                    </div>
+                                                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2">
+                                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                                    </svg>
+                                                </div>
+                                                <div class="faq-answer">
+                                                    <p>企业应根据自身的研发管理水平和业务需求选择合适的级别。一般建议从CMMI ML2或ML3开始，逐步提升至更高成熟度级别。</p>
                                                 </div>
                                             </div>
-                                            <div style="margin-bottom: 20px; padding: 20px; background-color: #f9f9f9; border-radius: 8px; transition: all 0.3s ease; position: relative; overflow: hidden;">
-                                                <h4 style="margin: 0 0 10px 0; font-size: 16px; font-weight: 600;">模型选择</h4>
-                                                <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #666;">
-                                                    应该采用哪个模型？
-                                                </p>
-                                                <div style="position: absolute; top: 100%; left: 0; width: 100%; padding: 20px; background-color: #f0f0f0; transition: top 0.3s ease; box-sizing: border-box;">
-                                                    <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #333;">
-                                                        CMMI提供了多个模型，企业应根据自身业务类型选择。软件开发企业通常选择CMMI-DEV（开发模型），系统集成企业可选择CMMI-SVC（服务模型）。
-                                                    </p>
+                                            <div class="faq-item">
+                                                <div class="faq-question" onclick="toggleFaq(this)">
+                                                    <div class="faq-question-text">
+                                                        <h4>模型选择</h4>
+                                                        <p>应该采用哪个模型？</p>
+                                                    </div>
+                                                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2">
+                                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                                    </svg>
+                                                </div>
+                                                <div class="faq-answer">
+                                                    <p>CMMI提供了多个模型，企业应根据自身业务类型选择。软件开发企业通常选择CMMI-DEV（开发模型），系统集成企业可选择CMMI-SVC（服务模型）。</p>
                                                 </div>
                                             </div>
-                                            <div style="margin-bottom: 20px; padding: 20px; background-color: #f9f9f9; border-radius: 8px; transition: all 0.3s ease; position: relative; overflow: hidden;">
-                                                <h4 style="margin: 0 0 10px 0; font-size: 16px; font-weight: 600;">过级企业名单</h4>
-                                                <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #666;">
-                                                    如何判断企业是否通过CMMI认证？
-                                                </p>
-                                                <div style="position: absolute; top: 100%; left: 0; width: 100%; padding: 20px; background-color: #f0f0f0; transition: top 0.3s ease; box-sizing: border-box;">
-                                                    <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #333;">
-                                                        可以通过CMMI官方网站查询企业的认证状态和级别。此外，通过认证的企业通常会在其官方网站或宣传材料中展示CMMI证书。
-                                                    </p>
+                                            <div class="faq-item">
+                                                <div class="faq-question" onclick="toggleFaq(this)">
+                                                    <div class="faq-question-text">
+                                                        <h4>过级企业名单</h4>
+                                                        <p>如何判断企业是否通过CMMI认证？</p>
+                                                    </div>
+                                                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2">
+                                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                                    </svg>
+                                                </div>
+                                                <div class="faq-answer">
+                                                    <p>可以通过CMMI官方网站查询企业的认证状态和级别。此外，通过认证的企业通常会在其官方网站或宣传材料中展示CMMI证书。</p>
                                                 </div>
                                             </div>
-                                            <div style="margin-bottom: 20px; padding: 20px; background-color: #f9f9f9; border-radius: 8px; transition: all 0.3s ease; position: relative; overflow: hidden;">
-                                                <h4 style="margin: 0 0 10px 0; font-size: 16px; font-weight: 600;">审核资质</h4>
-                                                <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #666;">
-                                                    如何判断咨询公司是否具备评估资质？
-                                                </p>
-                                                <div style="position: absolute; top: 100%; left: 0; width: 100%; padding: 20px; background-color: #f0f0f0; transition: top 0.3s ease; box-sizing: border-box;">
-                                                    <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #333;">
-                                                        具备CMMI评估资质的咨询公司应拥有经CMMI Institute授权的主任评估师（Lead Appraiser），并在CMMI Institute网站上有相关备案信息。
-                                                    </p>
+                                            <div class="faq-item">
+                                                <div class="faq-question" onclick="toggleFaq(this)">
+                                                    <div class="faq-question-text">
+                                                        <h4>审核资质</h4>
+                                                        <p>如何判断咨询公司是否具备评估资质？</p>
+                                                    </div>
+                                                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2">
+                                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                                    </svg>
+                                                </div>
+                                                <div class="faq-answer">
+                                                    <p>具备CMMI评估资质的咨询公司应拥有经CMMI Institute授权的主任评估师（Lead Appraiser），并在CMMI Institute网站上有相关备案信息。</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <script>
-                                    // 添加悬停效果
-                                    document.querySelectorAll('.m-section div[style*="background-color: #f9f9f9"]').forEach(item => {
-                                        item.classList.add('faq-item');
-                                        const answer = item.querySelector('div[style*="position: absolute"]');
-                                        if (answer) {
-                                            answer.classList.add('faq-answer');
-                                            item.addEventListener('mouseenter', () => {
-                                                answer.style.top = '0';
-                                            });
-                                            item.addEventListener('mouseleave', () => {
-                                                answer.style.top = '100%';
-                                            });
+                                    function toggleFaq(element) {
+                                        const faqItem = element.parentElement;
+                                        const isActive = faqItem.classList.contains('active');
+                                        
+                                        // 关闭所有其他FAQ项
+                                        document.querySelectorAll('.faq-item').forEach(item => {
+                                            item.classList.remove('active');
+                                        });
+                                        
+                                        // 如果当前项未激活，则激活它
+                                        if (!isActive) {
+                                            faqItem.classList.add('active');
                                         }
-                                    });
+                                    }
                                 </script>
                             </div>
                         </div>
