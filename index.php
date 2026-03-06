@@ -192,8 +192,8 @@
                                                 <div class="m-heroslider__content">
 
                                                     <div class="m-heroslider__topline">能力成熟度模型（集成）</div>
-                                                    <div class="m-heroslider__teaser1">
-                                                        CMMI
+                                                    <div class="m-heroslider__teaser1" style="font-size:46px">
+                                                        CMMI(Capability Maturity Model Integration)
                                                     </div>
                                                     <div class="m-heroslider__teaser2">
                                                         资质认证
@@ -213,7 +213,8 @@
                                                     <div class="m-heroslider__topline">
                                                         汽车软件过改进和能力认定
                                                     </div>
-                                                    <div class="m-heroslider__teaser1">ASPICE</div>
+                                                    <div class="m-heroslider__teaser1" style="font-size:60px;line-height:60px;padding-bottom:10px;">ASPICE</div>
+                                                    <div class="m-heroslider__teaser1" style="font-size:26px;line-height:26px;padding-bottom:20px;"> Automotive Software Process Improvement and Capacity dEtermination</div>
                                                     <div class="m-heroslider__teaser2">评估</div>
                                                 </div>
                                             </div>
