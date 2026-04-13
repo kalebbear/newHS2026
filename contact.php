@@ -1,5 +1,6 @@
 <?php
 require_once 'db_config.php';
+require_once 'class.smtp.php';
 
 $success_message = '';
 $error_message = '';
@@ -10,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = isset($_POST['email']) ? trim($_POST['email']) : '';
     $phone = isset($_POST['phone']) ? trim($_POST['phone']) : '';
     $message = isset($_POST['message']) ? trim($_POST['message']) : '';
-    
+
     // 验证数据
     $errors = [];
     if (empty($name)) {
@@ -24,11 +25,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($message)) {
         $errors[] = '请输入留言内容';
     }
-    
+
     if (empty($errors)) {
         try {
+            // 保存到数据库
             $stmt = $pdo->prepare("INSERT INTO contact_messages (name, email, phone, message) VALUES (?, ?, ?, ?)");
             $stmt->execute([$name, $email, $phone, $message]);
+
+            // 发送邮件通知
+            $mailer = new SimpleMailer([
+                'host' => 'smtp.163.com',
+                'port' => 465,
+                'ssl' => true,
+                'username' => 'xk6228024@163.com',
+                'password' => 'CZqWE6jm5MgdNXPw',
+                'from' => 'xk6228024@163.com'
+            ]);
+
+            $emailSubject = "【华赛官网】新留言 - {$name}";
+            $emailBody = "
+                <h3>您收到一条新的网站留言</h3>
+                <p><strong>姓名：</strong>{$name}</p>
+                <p><strong>邮箱：</strong>{$email}</p>
+                <p><strong>电话：</strong>{$phone}</p>
+                <p><strong>留言内容：</strong></p>
+                <p>" . nl2br(htmlspecialchars($message)) . "</p>
+                <hr>
+                <p><small>此邮件由华赛官网自动发送</small></p>
+            ";
+
+            $mailResult = $mailer->send('xk6228024@163.com', $emailSubject, $emailBody, true);
+            if ($mailResult !== true) {
+                // 邮件发送失败但数据已保存，记录错误
+                error_log("邮件发送失败: " . $mailResult);
+            }
+
             $success_message = '感谢您的留言，我们会尽快与您联系！';
         } catch (PDOException $e) {
             $error_message = '提交失败，请稍后重试';
