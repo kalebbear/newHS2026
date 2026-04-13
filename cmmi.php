@@ -85,76 +85,196 @@ $pageKeywords = 'CMMI评估,CMMI认证,CMMI咨询,CMMI 3级,CMMI 5级';
                                 
                                 <!-- 评估流程 -->
                                 <div style="max-width: 1000px; margin: 0 auto 60px auto;">
-                                    <h3 style="margin-bottom: 30px; color: #333; text-align: center;">评估流程</h3>
-                                    <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px;">
-                                        <div style="display: flex; align-items: center; flex: 1; min-width: 200px;">
-                                            <div style="width: 80px; height: 80px; background-color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #333; font-size: 24px; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                                                1
-                                            </div>
-                                            <div style="margin-left: 20px; flex-grow: 1;">
-                                                <h4 style="margin: 0 0 5px 0; font-size: 16px; font-weight: 600;">信息收集</h4>
-                                                <p style="margin: 0; font-size: 14px; color: #666;">收集企业研发管理相关信息</p>
+                                    <h3 style="margin-bottom: 50px; color: #333; text-align: center;">评估流程</h3>
+                                    
+                                    <style>
+                                        .steps-container {
+                                            max-width: 900px;
+                                            margin: 0 auto;
+                                            position: relative;
+                                        }
+                                        .steps-container::before {
+                                            content: '';
+                                            position: absolute;
+                                            left: 40px;
+                                            top: 0;
+                                            bottom: 0;
+                                            width: 4px;
+                                            background: linear-gradient(to bottom, #4a6fa5, #6b8cbc);
+                                            border-radius: 2px;
+                                        }
+                                        .step-item {
+                                            display: flex;
+                                            align-items: flex-start;
+                                            margin-bottom: 40px;
+                                            position: relative;
+                                        }
+                                        .step-item:last-child {
+                                            margin-bottom: 0;
+                                        }
+                                        .step-number {
+                                            width: 80px;
+                                            height: 80px;
+                                            background: linear-gradient(135deg, #4a6fa5, #6b8cbc);
+                                            border-radius: 50%;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            color: #fff;
+                                            font-size: 28px;
+                                            font-weight: bold;
+                                            flex-shrink: 0;
+                                            box-shadow: 0 4px 15px rgba(74, 111, 165, 0.3);
+                                            position: relative;
+                                            z-index: 1;
+                                            border: 4px solid #fff;
+                                        }
+                                        .step-content {
+                                            margin-left: 30px;
+                                            flex: 1;
+                                            background: #fff;
+                                            padding: 25px 30px;
+                                            border-radius: 12px;
+                                            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+                                            border: 1px solid #e8e8e8;
+                                            transition: all 0.3s ease;
+                                        }
+                                        .step-content:hover {
+                                            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+                                            transform: translateX(5px);
+                                        }
+                                        .step-content h4 {
+                                            margin: 0 0 12px 0;
+                                            font-size: 18px;
+                                            font-weight: 600;
+                                            color: #333;
+                                        }
+                                        .step-content p {
+                                            margin: 0;
+                                            font-size: 14px;
+                                            line-height: 1.8;
+                                            color: #666;
+                                        }
+                                        .step-tags {
+                                            display: flex;
+                                            flex-wrap: wrap;
+                                            gap: 8px;
+                                            margin-top: 15px;
+                                        }
+                                        .step-tag {
+                                            background: #f0f4f8;
+                                            color: #4a6fa5;
+                                            padding: 4px 12px;
+                                            border-radius: 20px;
+                                            font-size: 12px;
+                                            font-weight: 500;
+                                        }
+                                        @media (max-width: 768px) {
+                                            .steps-container::before {
+                                                left: 25px;
+                                            }
+                                            .step-number {
+                                                width: 50px;
+                                                height: 50px;
+                                                font-size: 20px;
+                                                border-width: 3px;
+                                            }
+                                            .step-content {
+                                                margin-left: 20px;
+                                                padding: 20px;
+                                            }
+                                        }
+                                    </style>
+                                    
+                                    <div class="steps-container">
+                                        <div class="step-item">
+                                            <div class="step-number">1</div>
+                                            <div class="step-content">
+                                                <h4>信息收集</h4>
+                                                <p>收集企业研发管理相关信息，包括组织架构、项目情况、现有流程文档等，为评估做充分准备。</p>
+                                                <div class="step-tags">
+                                                    <span class="step-tag">资料收集</span>
+                                                    <span class="step-tag">现状调研</span>
+                                                    <span class="step-tag">需求确认</span>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div style="color: #333; font-size: 24px;">→</div>
-                                        <div style="display: flex; align-items: center; flex: 1; min-width: 200px;">
-                                            <div style="width: 80px; height: 80px; background-color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #333; font-size: 24px; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                                                2
-                                            </div>
-                                            <div style="margin-left: 20px; flex-grow: 1;">
-                                                <h4 style="margin: 0 0 5px 0; font-size: 16px; font-weight: 600;">评估计划</h4>
-                                                <p style="margin: 0; font-size: 14px; color: #666;">制定详细的评估计划</p>
-                                            </div>
-                                        </div>
-                                        <div style="color: #333; font-size: 24px;">→</div>
-                                        <div style="display: flex; align-items: center; flex: 1; min-width: 200px;">
-                                            <div style="width: 80px; height: 80px; background-color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #333; font-size: 24px; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                                                3
-                                            </div>
-                                            <div style="margin-left: 20px; flex-grow: 1;">
-                                                <h4 style="margin: 0 0 5px 0; font-size: 16px; font-weight: 600;">在线注册</h4>
-                                                <p style="margin: 0; font-size: 14px; color: #666;">完成官方在线注册流程</p>
+                                        
+                                        <div class="step-item">
+                                            <div class="step-number">2</div>
+                                            <div class="step-content">
+                                                <h4>评估计划</h4>
+                                                <p>制定详细的评估计划，确定评估范围、时间安排、参与人员及所需资源，确保评估顺利进行。</p>
+                                                <div class="step-tags">
+                                                    <span class="step-tag">计划制定</span>
+                                                    <span class="step-tag">范围确定</span>
+                                                    <span class="step-tag">资源调配</span>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px; margin-top: 30px;">
-                                        <div style="display: flex; align-items: center; flex: 1; min-width: 200px;">
-                                            <div style="width: 80px; height: 80px; background-color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #333; font-size: 24px; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                                                4
-                                            </div>
-                                            <div style="margin-left: 20px; flex-grow: 1;">
-                                                <h4 style="margin: 0 0 5px 0; font-size: 16px; font-weight: 600;">准备度检查</h4>
-                                                <p style="margin: 0; font-size: 14px; color: #666;">进行评估前的准备度检查</p>
-                                            </div>
-                                        </div>
-                                        <div style="color: #333; font-size: 24px;">→</div>
-                                        <div style="display: flex; align-items: center; flex: 1; min-width: 200px;">
-                                            <div style="width: 80px; height: 80px; background-color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #333; font-size: 24px; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                                                5
-                                            </div>
-                                            <div style="margin-left: 20px; flex-grow: 1;">
-                                                <h4 style="margin: 0 0 5px 0; font-size: 16px; font-weight: 600;">正式评估</h4>
-                                                <p style="margin: 0; font-size: 14px; color: #666;">执行正式的评估流程</p>
+                                        
+                                        <div class="step-item">
+                                            <div class="step-number">3</div>
+                                            <div class="step-content">
+                                                <h4>在线注册</h4>
+                                                <p>在CMMI Institute官方网站完成评估注册，提交企业基本信息和评估申请，获取评估资格。</p>
+                                                <div class="step-tags">
+                                                    <span class="step-tag">官方注册</span>
+                                                    <span class="step-tag">信息提交</span>
+                                                    <span class="step-tag">资格获取</span>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div style="color: #333; font-size: 24px;">→</div>
-                                        <div style="display: flex; align-items: center; flex: 1; min-width: 200px;">
-                                            <div style="width: 80px; height: 80px; background-color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #333; font-size: 24px; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                                                6
-                                            </div>
-                                            <div style="margin-left: 20px; flex-grow: 1;">
-                                                <h4 style="margin: 0 0 5px 0; font-size: 16px; font-weight: 600;">官方审计</h4>
-                                                <p style="margin: 0; font-size: 14px; color: #666;">提交评估结果进行官方审计</p>
+                                        
+                                        <div class="step-item">
+                                            <div class="step-number">4</div>
+                                            <div class="step-content">
+                                                <h4>准备度检查</h4>
+                                                <p>评估前进行准备度检查，验证企业是否已达到评估要求，识别潜在风险并制定应对措施。</p>
+                                                <div class="step-tags">
+                                                    <span class="step-tag">准备度评审</span>
+                                                    <span class="step-tag">风险识别</span>
+                                                    <span class="step-tag">问题改进</span>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div style="color: #333; font-size: 24px;">→</div>
-                                        <div style="display: flex; align-items: center; flex: 1; min-width: 200px;">
-                                            <div style="width: 80px; height: 80px; background-color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #333; font-size: 24px; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                                                7
+                                        
+                                        <div class="step-item">
+                                            <div class="step-number">5</div>
+                                            <div class="step-content">
+                                                <h4>正式评估</h4>
+                                                <p>由主任评估师带领评估团队执行正式评估，通过文档审查、访谈等方式验证过程执行情况。</p>
+                                                <div class="step-tags">
+                                                    <span class="step-tag">文档审查</span>
+                                                    <span class="step-tag">人员访谈</span>
+                                                    <span class="step-tag">过程验证</span>
+                                                </div>
                                             </div>
-                                            <div style="margin-left: 20px; flex-grow: 1;">
-                                                <h4 style="margin: 0 0 5px 0; font-size: 16px; font-weight: 600;">官网发布</h4>
-                                                <p style="margin: 0; font-size: 14px; color: #666;">官方发布评估结果</p>
+                                        </div>
+                                        
+                                        <div class="step-item">
+                                            <div class="step-number">6</div>
+                                            <div class="step-content">
+                                                <h4>官方审计</h4>
+                                                <p>将评估结果提交CMMI Institute进行官方审计，确保评估过程符合规范，结果真实有效。</p>
+                                                <div class="step-tags">
+                                                    <span class="step-tag">结果提交</span>
+                                                    <span class="step-tag">官方审核</span>
+                                                    <span class="step-tag">质量把关</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="step-item">
+                                            <div class="step-number">7</div>
+                                            <div class="step-content">
+                                                <h4>官网发布</h4>
+                                                <p>通过官方审计后，CMMI Institute在官网发布评估结果，企业获得正式证书和等级认可。</p>
+                                                <div class="step-tags">
+                                                    <span class="step-tag">结果发布</span>
+                                                    <span class="step-tag">证书获取</span>
+                                                    <span class="step-tag">等级认可</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
