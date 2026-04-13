@@ -59,8 +59,8 @@ $canonicalUrl = isset($canonicalUrl) ? $canonicalUrl : 'http://www.huasaiinfo.co
         color: #3a4354 !important;
       }
       
-      /* 华赛始终红色 */
+      /* 华赛始终蓝色 */
       .l-header__logo-text .logo-highlight {
-        color: #c41e3a !important;
+        color: #4a6fa5 !important;
       }
     </style>

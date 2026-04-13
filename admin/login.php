@@ -65,7 +65,7 @@
             width: 80px;
             height: 80px;
             margin: 0 auto 20px;
-            background: linear-gradient(135deg, #c41e3a 0%, #e74c3c 100%);
+            background: linear-gradient(135deg, #4a6fa5 0%, #6b8cbc 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -160,7 +160,7 @@
             margin-bottom: 25px;
             font-size: 14px;
             display: none;
-            border-left: 4px solid #e74c3c;
+            border-left: 4px solid #4a6fa5;
             animation: shake 0.5s ease-in-out;
         }
         @keyframes shake {

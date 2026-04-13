@@ -58,7 +58,7 @@ include 'pageheader.php';
                   
                   <div style="position: relative; max-width: 900px; margin: 0 auto;">
                     <!-- 时间线 -->
-                    <div style="position: absolute; left: 50%; transform: translateX(-50%); width: 4px; height: 100%; background: linear-gradient(to bottom, #4a6fa5, #dc3545);"></div>
+                    <div style="position: absolute; left: 50%; transform: translateX(-50%); width: 4px; height: 100%; background: linear-gradient(to bottom, #4a6fa5, #4a6fa5);"></div>
                     
                     <!-- 1986年 CMM -->
                     <div style="display: flex; margin-bottom: 40px; position: relative;">
@@ -111,12 +111,12 @@ include 'pageheader.php';
                     <!-- 2018年 V3.1 -->
                     <div style="display: flex; position: relative;">
                       <div style="flex: 1; text-align: right; padding-right: 40px;">
-                        <h3 style="color: #dc3545; font-size: 20px; margin-bottom: 10px;">2018年 V3.1</h3>
+                        <h3 style="color: #4a6fa5; font-size: 20px; margin-bottom: 10px;">2018年 V3.1</h3>
                         <p style="color: #666; font-size: 14px; line-height: 1.8;">
                           2018年发布了当前最新版本ASPICE V3.1，v3.1在v3.0的基础上做了一些微小改动，并将HIS SCOPE改名为了VDA SCOPE。
                         </p>
                       </div>
-                      <div style="width: 20px; height: 20px; background: #dc3545; border-radius: 50%; position: absolute; left: 50%; transform: translateX(-50%); border: 4px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.2);"></div>
+                      <div style="width: 20px; height: 20px; background: #4a6fa5; border-radius: 50%; position: absolute; left: 50%; transform: translateX(-50%); border: 4px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.2);"></div>
                       <div style="flex: 1; padding-left: 40px;"></div>
                     </div>
                   </div>
@@ -186,8 +186,8 @@ include 'pageheader.php';
                     <!-- 5级 -->
                     <div style="background: #fff; border-radius: 12px; padding: 30px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
                       <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                        <div style="width: 50px; height: 50px; background: #dc3545; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff; font-size: 20px;">5</div>
-                        <h3 style="color: #dc3545; font-size: 18px;">5级 - 持续优化级</h3>
+                        <div style="width: 50px; height: 50px; background: #4a6fa5; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff; font-size: 20px;">5</div>
+                        <h3 style="color: #4a6fa5; font-size: 18px;">5级 - 持续优化级</h3>
                       </div>
                       <p style="color: #666; font-size: 14px; line-height: 1.8;">代表企业能够基于商业目标的需要，主动的对过程进行调整，对变革管理有很强的管理能力，能够基于对过程的量化分析设定明确有效的过程改进目标，并能对过程改进结果进行有效的量化监控和分析。</p>
                     </div>
@@ -227,7 +227,7 @@ include 'pageheader.php';
                         </ul>
                       </div>
                       <div>
-                        <h4 style="color: #dc3545; font-size: 16px; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #dc3545;">组织生命周期过程</h4>
+                        <h4 style="color: #4a6fa5; font-size: 16px; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #4a6fa5;">组织生命周期过程</h4>
                         <ul style="list-style: none; padding: 0; margin: 0;">
                           <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #f0f0f0;">MAN - 管理过程组</li>
                           <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #f0f0f0;">PIM - 过程改进过程组</li>

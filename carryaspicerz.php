@@ -140,7 +140,7 @@ include 'pageheader.php';
                     <!-- 1. 开工会 -->
                     <div style="background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
                       <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
-                        <div style="width: 40px; height: 40px; background: #dc3545; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff; font-size: 16px;">1</div>
+                        <div style="width: 40px; height: 40px; background: #4a6fa5; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff; font-size: 16px;">1</div>
                         <h3 style="color: #333; font-size: 16px;">开工会</h3>
                       </div>
                       <p style="color: #666; font-size: 14px; line-height: 1.8;">
@@ -151,7 +151,7 @@ include 'pageheader.php';
                     <!-- 2. 文档检查 -->
                     <div style="background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
                       <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
-                        <div style="width: 40px; height: 40px; background: #dc3545; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff; font-size: 16px;">2</div>
+                        <div style="width: 40px; height: 40px; background: #4a6fa5; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff; font-size: 16px;">2</div>
                         <h3 style="color: #333; font-size: 16px;">文档检查</h3>
                       </div>
                       <p style="color: #666; font-size: 14px; line-height: 1.8;">
@@ -162,7 +162,7 @@ include 'pageheader.php';
                     <!-- 3. 员工访谈 -->
                     <div style="background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
                       <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
-                        <div style="width: 40px; height: 40px; background: #dc3545; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff; font-size: 16px;">3</div>
+                        <div style="width: 40px; height: 40px; background: #4a6fa5; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff; font-size: 16px;">3</div>
                         <h3 style="color: #333; font-size: 16px;">员工访谈</h3>
                       </div>
                       <p style="color: #666; font-size: 14px; line-height: 1.8;">
@@ -173,7 +173,7 @@ include 'pageheader.php';
                     <!-- 4. 整理汇总 -->
                     <div style="background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
                       <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
-                        <div style="width: 40px; height: 40px; background: #dc3545; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff; font-size: 16px;">4</div>
+                        <div style="width: 40px; height: 40px; background: #4a6fa5; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff; font-size: 16px;">4</div>
                         <h3 style="color: #333; font-size: 16px;">整理汇总</h3>
                       </div>
                       <p style="color: #666; font-size: 14px; line-height: 1.8;">
@@ -184,7 +184,7 @@ include 'pageheader.php';
                     <!-- 5. 活动打分 -->
                     <div style="background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
                       <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
-                        <div style="width: 40px; height: 40px; background: #dc3545; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff; font-size: 16px;">5</div>
+                        <div style="width: 40px; height: 40px; background: #4a6fa5; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff; font-size: 16px;">5</div>
                         <h3 style="color: #333; font-size: 16px;">活动打分</h3>
                       </div>
                       <p style="color: #666; font-size: 14px; line-height: 1.8;">
@@ -195,7 +195,7 @@ include 'pageheader.php';
                     <!-- 6. 级别打分 -->
                     <div style="background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
                       <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
-                        <div style="width: 40px; height: 40px; background: #dc3545; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff; font-size: 16px;">6</div>
+                        <div style="width: 40px; height: 40px; background: #4a6fa5; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff; font-size: 16px;">6</div>
                         <h3 style="color: #333; font-size: 16px;">级别打分</h3>
                       </div>
                       <p style="color: #666; font-size: 14px; line-height: 1.8;">
@@ -206,7 +206,7 @@ include 'pageheader.php';
                     <!-- 7. 团队评审 -->
                     <div style="background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
                       <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
-                        <div style="width: 40px; height: 40px; background: #dc3545; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff; font-size: 16px;">7</div>
+                        <div style="width: 40px; height: 40px; background: #4a6fa5; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff; font-size: 16px;">7</div>
                         <h3 style="color: #333; font-size: 16px;">团队评审</h3>
                       </div>
                       <p style="color: #666; font-size: 14px; line-height: 1.8;">
@@ -215,7 +215,7 @@ include 'pageheader.php';
                     </div>
                     
                     <!-- 8. 评估报告 -->
-                    <div style="background: linear-gradient(135deg, #dc3545 0%, #c82333 100%); border-radius: 12px; padding: 25px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); color: #fff;">
+                    <div style="background: linear-gradient(135deg, #4a6fa5 0%, #4a6fa5 100%); border-radius: 12px; padding: 25px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); color: #fff;">
                       <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
                         <div style="width: 40px; height: 40px; background: rgba(255,255,255,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff; font-size: 16px;">8</div>
                         <h3 style="color: #fff; font-size: 16px;">评估报告</h3>
@@ -262,7 +262,7 @@ include 'pageheader.php';
                       <div style="color: #ccc; font-size: 24px;">→</div>
                       
                       <div style="text-align: center; flex: 1; min-width: 120px;">
-                        <div style="width: 60px; height: 60px; background: #dc3545; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
+                        <div style="width: 60px; height: 60px; background: #4a6fa5; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
                           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                         </div>
                         <h4 style="color: #333; font-size: 14px; margin-bottom: 5px;">现场审核</h4>

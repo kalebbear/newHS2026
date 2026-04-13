@@ -8,10 +8,10 @@
     --primary-dark: #3d5d8a;
     --primary-light: #6b8cbc;
     --secondary-color: #2c3e50;
-    --accent-color: #c41e3a;
+    --accent-color: #4a6fa5;
     --success-color: #27ae60;
     --warning-color: #f39c12;
-    --danger-color: #e74c3c;
+    --danger-color: #4a6fa5;
     --info-color: #3498db;
     
     --bg-color: #f5f7fa;
@@ -96,7 +96,7 @@ body {
 .sidebar-header .logo-icon {
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, var(--accent-color) 0%, #e74c3c 100%);
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-light) 100%);
     border-radius: 10px;
     display: flex;
     align-items: center;

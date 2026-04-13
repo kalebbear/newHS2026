@@ -83,7 +83,7 @@ include 'pageheader.php';
                     </div>
                     
                     <!-- Class 1 -->
-                    <div style="background: linear-gradient(135deg, #dc3545 0%, #c82333 100%); border-radius: 12px; padding: 30px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); color: #fff;">
+                    <div style="background: linear-gradient(135deg, #4a6fa5 0%, #4a6fa5 100%); border-radius: 12px; padding: 30px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); color: #fff;">
                       <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
                         <div style="width: 60px; height: 60px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff; font-size: 24px;">1</div>
                         <h3 style="color: #fff; font-size: 20px;">Class 1</h3>
@@ -144,7 +144,7 @@ include 'pageheader.php';
                     </div>
                     
                     <!-- Principal Assessor -->
-                    <div style="background: linear-gradient(135deg, #dc3545 0%, #c82333 100%); border-radius: 12px; padding: 30px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); color: #fff;">
+                    <div style="background: linear-gradient(135deg, #4a6fa5 0%, #4a6fa5 100%); border-radius: 12px; padding: 30px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); color: #fff;">
                       <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
                         <div style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
@@ -190,10 +190,10 @@ include 'pageheader.php';
                     
                     <!-- 人证 -->
                     <div style="background: #fff; border-radius: 12px; padding: 35px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8; text-align: center;">
-                      <div style="width: 70px; height: 70px; background: #dc3545; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                      <div style="width: 70px; height: 70px; background: #4a6fa5; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                       </div>
-                      <h3 style="color: #dc3545; font-size: 20px; margin-bottom: 15px;">人证</h3>
+                      <h3 style="color: #4a6fa5; font-size: 20px; margin-bottom: 15px;">人证</h3>
                       <p style="color: #666; font-size: 14px; line-height: 1.8;">
                         指相关活动执行人在评估期间的访谈时口头证实其执行了ASPICE相关活动
                       </p>
@@ -219,7 +219,7 @@ include 'pageheader.php';
                   <div style="background: #fff; border-radius: 12px; padding: 40px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
                       <div style="text-align: center; padding: 25px; background: #f8f9fa; border-radius: 8px;">
-                        <div style="font-size: 36px; font-weight: bold; color: #dc3545; margin-bottom: 10px;">N</div>
+                        <div style="font-size: 36px; font-weight: bold; color: #4a6fa5; margin-bottom: 10px;">N</div>
                         <h4 style="color: #333; font-size: 16px; margin-bottom: 8px;">Not achieved</h4>
                         <p style="color: #666; font-size: 13px;">未达成</p>
                       </div>

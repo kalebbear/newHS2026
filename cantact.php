@@ -275,37 +275,7 @@
     <div id="app">
 <?php include 'header.php'; ?>
       <main id="main" class="main">
-        <section class="m-pageheader">
-          <div class="m-pageheader__main">
-            <div class="container">
-              <div class="row">
-                <div class="m-pageheader__innerwrapper">
-                  <div class="m-pageheader__inner">
-                    <div class="m-pageheader__content">
-                      <div class="m-pageheader__title"><h1>Contact</h1></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="m-pageheader__breadcrumb">
-            <div class="container">
-              <div class="row">
-                <div class="m-breadcrumb__inner">
-                  <div class="m-breadcrumb">
-                    <span
-                      ><span><a href="index.html">Home</a></span>
-                      <span class="breadcrumb_last" aria-current="page"
-                        >Contact</span
-                      ></span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        
         <div class="m-contact">
           <section class="m-contactus">
             <div class="m-contactus__inner">

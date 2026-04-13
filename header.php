@@ -1,3 +1,21 @@
+      <style>
+    /* 1200-1500px 响应式调整 - 隐藏中间导航的联系按钮 */
+    @media (min-width: 1200px) and (max-width: 1500px) {
+      .l-header__center .m-navcontact {
+        display: none;
+      }
+    }
+    /* 移动端隐藏右侧座机按钮（使用汉堡菜单） */
+    @media (max-width: 780px) {
+      .l-header__right .button__secondary2 {
+        display: none;
+      }
+    }
+    /* 座机按钮图标左移 */
+    .l-header__right .button__secondary2::before {
+      left: 7px !important;
+    }
+  </style>
       <header class="l-header">
         <div class="container">
           <div class="row">
@@ -9,7 +27,7 @@
                   class="l-header__logo-text"
                   style="text-decoration: none; display: flex; flex-direction: column; align-items: stretch; justify-content: center; line-height: 1.4;"
                 >
-                  <span class="logo-text-cn" style="font-size: 18px; font-weight: 700; white-space: nowrap; text-align: justify; text-align-last: justify;">深圳<span class="logo-highlight" style="color: #c41e3a;">华赛</span>信息咨询有限公司</span>
+                  <span class="logo-text-cn" style="font-size: 18px; font-weight: 700; white-space: nowrap; text-align: justify; text-align-last: justify;">深圳<span class="logo-highlight" style="color: #4a6fa5;">华赛</span>信息咨询有限公司</span>
                   <span class="logo-text-en" style="font-size: 11px; letter-spacing: 0.5px; white-space: nowrap; text-align: justify; text-align-last: justify; margin-top: 3px;">Shenzhen Huasai Information Consulting Co.,Ltd</span>
                 </a>
               </div>
@@ -180,6 +198,16 @@
               </div>
               <div class="l-header__right">
                 <div class="l-header__contact">
+                  <a
+                    href="tel:0755-29656825"
+                    title="座机"
+                    class="m-button__secondary button__secondary2"
+                    data-bg="lightgrey"
+                    data-icon-left="phone"
+                    style="margin-right: 5px;padding-left:25px;padding-right:5px;"
+                  >
+                    0755-29656825
+                  </a>
                   <a
                     href="contact.php"
                     title="Contact"
