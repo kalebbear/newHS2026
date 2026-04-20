@@ -115,10 +115,10 @@ $pageKeywords = '典型案例,CMMI案例,ASPICE案例,成功案例';
       padding: 20px;
       border-radius: 8px;
       margin: 20px 0;
-      border-left: 4px solid #4a6fa5;
+      border-left: 4px solid #dc3545;
     }
     .case-study-content .problem-chart h4 {
-      color: #4a6fa5;
+      color: #dc3545;
       margin-bottom: 15px;
     }
     .case-study-content .status-legend {
@@ -139,7 +139,7 @@ $pageKeywords = '典型案例,CMMI案例,ASPICE案例,成功案例';
       border-radius: 4px;
     }
     .case-study-content .status-red {
-      background: #4a6fa5;
+      background: #dc3545;
     }
     .case-study-content .status-yellow {
       background: #ffc107;
@@ -323,8 +323,8 @@ include 'pageheader.php';
           datasets: [{
             label: '问题数量',
             data: [35, 42, 38, 45, 32, 28, 25, 16],
-            backgroundColor: '#4a6fa5',
-            borderColor: '#4a6fa5',
+            backgroundColor: '#dc3545',
+            borderColor: '#dc3545',
             borderWidth: 1
           }]
         },
@@ -364,9 +364,9 @@ include 'pageheader.php';
             label: '实施前',
             data: [30, 35, 40, 25, 45, 20, 30],
             backgroundColor: 'rgba(220, 53, 69, 0.2)',
-            borderColor: '#4a6fa5',
+            borderColor: '#dc3545',
             borderWidth: 2,
-            pointBackgroundColor: '#4a6fa5'
+            pointBackgroundColor: '#dc3545'
           }, {
             label: '实施后',
             data: [85, 88, 90, 82, 87, 80, 85],
@@ -410,8 +410,8 @@ include 'pageheader.php';
           datasets: [{
             label: '改进前',
             data: [100, 100],
-            backgroundColor: '#4a6fa5',
-            borderColor: '#4a6fa5',
+            backgroundColor: '#dc3545',
+            borderColor: '#dc3545',
             borderWidth: 1
           }, {
             label: '改进后',
@@ -456,8 +456,8 @@ include 'pageheader.php';
           datasets: [{
             label: '改进前',
             data: [100, 100],
-            backgroundColor: '#4a6fa5',
-            borderColor: '#4a6fa5',
+            backgroundColor: '#dc3545',
+            borderColor: '#dc3545',
             borderWidth: 1
           }, {
             label: '改进后',
@@ -504,8 +504,8 @@ include 'pageheader.php';
           datasets: [{
             label: '改进前',
             data: [60, 100],
-            backgroundColor: '#4a6fa5',
-            borderColor: '#4a6fa5',
+            backgroundColor: '#dc3545',
+            borderColor: '#dc3545',
             borderWidth: 1
           }, {
             label: '改进后',

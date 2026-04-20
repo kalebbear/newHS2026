@@ -1,6 +1,5 @@
 <?php
 require_once 'db_config.php';
-require_once 'class.smtp.php';
 
 $success_message = '';
 $error_message = '';
@@ -11,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = isset($_POST['email']) ? trim($_POST['email']) : '';
     $phone = isset($_POST['phone']) ? trim($_POST['phone']) : '';
     $message = isset($_POST['message']) ? trim($_POST['message']) : '';
-
+    
     // 验证数据
     $errors = [];
     if (empty($name)) {
@@ -25,41 +24,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($message)) {
         $errors[] = '请输入留言内容';
     }
-
+    
     if (empty($errors)) {
         try {
-            // 保存到数据库
             $stmt = $pdo->prepare("INSERT INTO contact_messages (name, email, phone, message) VALUES (?, ?, ?, ?)");
             $stmt->execute([$name, $email, $phone, $message]);
-
-            // 发送邮件通知
-            $mailer = new SimpleMailer([
-                'host' => 'smtp.163.com',
-                'port' => 465,
-                'ssl' => true,
-                'username' => 'xk6228024@163.com',
-                'password' => 'CZqWE6jm5MgdNXPw',
-                'from' => 'xk6228024@163.com'
-            ]);
-
-            $emailSubject = "【华赛官网】新留言 - {$name}";
-            $emailBody = "
-                <h3>您收到一条新的网站留言</h3>
-                <p><strong>姓名：</strong>{$name}</p>
-                <p><strong>邮箱：</strong>{$email}</p>
-                <p><strong>电话：</strong>{$phone}</p>
-                <p><strong>留言内容：</strong></p>
-                <p>" . nl2br(htmlspecialchars($message)) . "</p>
-                <hr>
-                <p><small>此邮件由华赛官网自动发送</small></p>
-            ";
-
-            $mailResult = $mailer->send('xk6228024@163.com', $emailSubject, $emailBody, true);
-            if ($mailResult !== true) {
-                // 邮件发送失败但数据已保存，记录错误
-                error_log("邮件发送失败: " . $mailResult);
-            }
-
             $success_message = '感谢您的留言，我们会尽快与您联系！';
         } catch (PDOException $e) {
             $error_message = '提交失败，请稍后重试';
@@ -86,7 +55,7 @@ $pageKeywords = '联系我们,华赛咨询,CMMI咨询,ASPICE咨询,深圳咨询'
     /* 必填标识改为红色 */
     #gform_wrapper_7 .gfield_required_asterisk,
     #gform_wrapper_7 .gfield_required {
-      color: #4a6fa5 !important;
+      color: #4c7189 !important;
     }
     /* 修复textarea显示 */
     #gform_wrapper_7 .ginput_container_textarea textarea {
@@ -110,7 +79,7 @@ $pageKeywords = '联系我们,华赛咨询,CMMI咨询,ASPICE咨询,深圳咨询'
       border-color: #4a6fa5 !important;
     }
     #gform_wrapper_7 .validation_message {
-      color: #4a6fa5;
+      color: #4c7189;
       font-size: 12px;
       margin-top: 5px;
     }
@@ -165,7 +134,7 @@ $pageKeywords = '联系我们,华赛咨询,CMMI咨询,ASPICE咨询,深圳咨询'
                   </div>
                   <div class="m-contactus__content">
                      <!-- 咨询热线 -->
-                      <div class="contact-item" style="background: linear-gradient(135deg, #4a6fa5 0%, #3d5d8a 100%); padding: 25px 30px; border-radius: 12px; color: #fff; text-align: center; flex: 1 1 100%;margin-bottom:20px;">
+                      <div class="contact-item" style="background: #4c7189; padding: 25px 30px; border-radius: 12px; color: #fff; text-align: center; flex: 1 1 100%;margin-bottom:20px;">
                         <h4 style="color: rgba(255,255,255,0.9); font-size: 14px; font-weight: 500; margin-bottom: 10px;">24小时咨询热线</h4>
                         <a href="tel:0755-29656825" style="color: #fff; font-size: 28px; font-weight: 700; text-decoration: none; letter-spacing: 2px;">0755-29656825</a>
                       </div>
@@ -173,16 +142,16 @@ $pageKeywords = '联系我们,华赛咨询,CMMI咨询,ASPICE咨询,深圳咨询'
                       <!-- CMMI咨询 谢先生 -->
                       <div class="contact-item" style="background: #fff; padding: 25px 30px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8; transition: all 0.3s ease; flex: 1 1 calc(50% - 10px); min-width: 280px;">
                         <div style="margin-bottom: 10px;">
-                          <h4 style="color: #4a6fa5; font-size: 15px; font-weight: 600;">CMMI咨询 <span style="color: #999; font-weight: 400;">（深圳）</span></h4>
+                          <h4 style="color: #4c7189; font-size: 15px; font-weight: 600;">CMMI咨询 <span style="color: #999; font-weight: 400;">（深圳）</span></h4>
                         </div>
                         <p style="color: #333; font-weight: 600; font-size: 16px; margin-bottom: 15px;">谢先生</p>
                         <div style="display: flex; flex-direction: column; gap: 12px;">
-                          <a href="tel:14737222742" style="background: #4a6fa5; color: #fff; padding: 12px 20px; border-radius: 8px; text-decoration: none; display: flex; align-items: center; gap: 12px; font-size: 15px; transition: all 0.3s ease;">
+                          <a href="tel:14737222742" style="background: #4c7189; color: #fff; padding: 12px 20px; border-radius: 8px; text-decoration: none; display: flex; align-items: center; gap: 12px; font-size: 15px; transition: all 0.3s ease;">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                             14737222742
                           </a>
                           <a href="mailto:changbo@huasaiinfo.com" style="background: #f8f9fa; color: #333; padding: 12px 20px; border-radius: 8px; text-decoration: none; display: flex; align-items: center; gap: 12px; font-size: 15px; border: 1px solid #e8e8e8; transition: all 0.3s ease; position: relative; z-index: 1;">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4a6fa5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4c7189" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                             changbo@huasaiinfo.com
                           </a>
                         </div>
@@ -191,11 +160,11 @@ $pageKeywords = '联系我们,华赛咨询,CMMI咨询,ASPICE咨询,深圳咨询'
                       <!-- CMMI咨询 常先生 -->
                       <div class="contact-item" style="background: #fff; padding: 25px 30px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8; transition: all 0.3s ease; flex: 1 1 calc(50% - 10px); min-width: 280px;">
                         <div style="margin-bottom: 10px;">
-                          <h4 style="color: #4a6fa5; font-size: 15px; font-weight: 600;">CMMI咨询 <span style="color: #999; font-weight: 400;">（北京）</span></h4>
+                          <h4 style="color: #4c7189; font-size: 15px; font-weight: 600;">CMMI咨询 <span style="color: #999; font-weight: 400;">（北京）</span></h4>
                         </div>
                         <p style="color: #333; font-weight: 600; font-size: 16px; margin-bottom: 15px;">常先生</p>
                         <div style="display: flex; flex-direction: column; gap: 12px;">
-                          <a href="tel:15724706007" style="background: #4a6fa5; color: #fff; padding: 12px 20px; border-radius: 8px; text-decoration: none; display: flex; align-items: center; gap: 12px; font-size: 15px; transition: all 0.3s ease;">
+                          <a href="tel:15724706007" style="background: #4c7189; color: #fff; padding: 12px 20px; border-radius: 8px; text-decoration: none; display: flex; align-items: center; gap: 12px; font-size: 15px; transition: all 0.3s ease;">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                             15724706007
                           </a>
@@ -209,11 +178,11 @@ $pageKeywords = '联系我们,华赛咨询,CMMI咨询,ASPICE咨询,深圳咨询'
                       <!-- ASPICE咨询 吴先生 -->
                       <div class="contact-item" style="background: #fff; padding: 25px 30px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8; transition: all 0.3s ease; flex: 1 1 calc(50% - 10px); min-width: 280px;">
                         <div style="margin-bottom: 10px;">
-                          <h4 style="color: #4a6fa5; font-size: 15px; font-weight: 600;">ASPICE咨询 </h4>
+                          <h4 style="color: #4c7189; font-size: 15px; font-weight: 600;">ASPICE咨询 </h4>
                         </div>
                         <p style="color: #333; font-weight: 600; font-size: 16px; margin-bottom: 15px;">吴先生</p>
                         <div style="display: flex; flex-direction: column; gap: 12px;">
-                          <a href="tel:18924597488" style="background: #4a6fa5; color: #fff; padding: 12px 20px; border-radius: 8px; text-decoration: none; display: flex; align-items: center; gap: 12px; font-size: 15px; transition: all 0.3s ease;">
+                          <a href="tel:18924597488" style="background: #4c7189; color: #fff; padding: 12px 20px; border-radius: 8px; text-decoration: none; display: flex; align-items: center; gap: 12px; font-size: 15px; transition: all 0.3s ease;">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                             18924597488
                           </a>
@@ -228,7 +197,7 @@ $pageKeywords = '联系我们,华赛咨询,CMMI咨询,ASPICE咨询,深圳咨询'
                     </div>
                     
                     <div style="margin-top: 35px; text-align: center;">
-                      <a href="#contact-form" class="m-button__primary" style="padding: 14px 40px; font-size: 15px;">
+                      <a href="#contact-form" class="m-button__primary" style="padding: 14px 40px; font-size: 15px;background:#4c7189;">
                         在线留言咨询
                       </a>
                     </div>

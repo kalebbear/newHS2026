@@ -48,7 +48,7 @@
       
       /* 华赛始终红色 */
       .l-header__logo-text .logo-highlight {
-        color: #4a6fa5 !important;
+        color: #c41e3a !important;
       }
     </style>
     <meta

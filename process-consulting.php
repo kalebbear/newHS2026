@@ -72,11 +72,11 @@ include 'pageheader.php';
                         企业为了提升研发管理，建立了各种流程体系，但往往事与愿违，没有将体系落地变成习惯问题。
                       </p>
                       <ul style="font-size: 15px; line-height: 2; color: #333; margin: 0; padding-left: 25px; max-width: 900px; margin: 0 auto;">
-                        <li><span style="color: #4a6fa5; font-weight: bold;">●</span> 实施CMMI的企业建立了很多制度和流程，但是制度太理想化，执行起来很困难，变成了两张皮；</li>
-                        <li><span style="color: #4a6fa5; font-weight: bold;">●</span> 实施ASPICE的企业文档很多，但是看起来好像都对，但实际上大家都不理解，没有变更；</li>
-                        <li><span style="color: #4a6fa5; font-weight: bold;">●</span> 实施IPD的企业搞了很多文档，但是产品开发流程还是没有按照研发流程走，项目管理依然很混乱；</li>
-                        <li><span style="color: #4a6fa5; font-weight: bold;">●</span> 实施GJB5000B的企业流程很好，文档齐全，但是各流程之间相互脱节，流程执行困难；</li>
-                        <li><span style="color: #4a6fa5; font-weight: bold;">●</span> 实施SCAMPI的企业流程很好了，太复杂了，只剩下了一堆流程，一点都不像研发；</li>
+                        <li><span style="color: #dc3545; font-weight: bold;">●</span> 实施CMMI的企业建立了很多制度和流程，但是制度太理想化，执行起来很困难，变成了两张皮；</li>
+                        <li><span style="color: #dc3545; font-weight: bold;">●</span> 实施ASPICE的企业文档很多，但是看起来好像都对，但实际上大家都不理解，没有变更；</li>
+                        <li><span style="color: #dc3545; font-weight: bold;">●</span> 实施IPD的企业搞了很多文档，但是产品开发流程还是没有按照研发流程走，项目管理依然很混乱；</li>
+                        <li><span style="color: #dc3545; font-weight: bold;">●</span> 实施GJB5000B的企业流程很好，文档齐全，但是各流程之间相互脱节，流程执行困难；</li>
+                        <li><span style="color: #dc3545; font-weight: bold;">●</span> 实施SCAMPI的企业流程很好了，太复杂了，只剩下了一堆流程，一点都不像研发；</li>
                       </ul>
                     </div>
                     
